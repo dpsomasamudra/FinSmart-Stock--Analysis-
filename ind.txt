@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinSmart Investment Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>FinSmart Stock Analysis</h1>
+        <form method="POST" class="form">
+            <input type="text" name="ticker" placeholder="Enter stock ticker (e.g., AAPL)" required>
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if error_message %}
+            <p class="error">{{ error_message }}</p>
+        {% endif %}
+
+        {% if recommendation %}
+            <div class="recommendation">
+                <h2>Recommendation: <span>{{ recommendation }}</span></h2>
+            </div>
+
+            <div class="additional-info">
+                {% if trend_prediction is not none %}
+                    <p><strong>Trend Prediction:</strong>
+                        {% if trend_prediction == 1 %}
+                            Price is likely to increase.
+                        {% else %}
+                            Price is likely to decrease.
+                        {% endif %}
+                    </p>
+                {% endif %}
+
+                {% if predicted_price %}
+                    <p><strong>Predicted Price:</strong> ${{ "%.2f"|format(predicted_price) }}</p>
+                {% endif %}
+            </div>
+
+            <div class="plot">
+                {{ plot_html|safe }}
+            </div>
+
+            {% if risk_metrics %}
+                <div class="risk-indicator {{ risk_metrics['risk_level']|lower|replace(' ', '-') }}">
+                    <p>Risk Level: {{ risk_metrics['risk_level'] }}</p>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <footer>
+        &copy; Aishruth, Paritosh, Ganesh H.
+    </footer>
+</body>
+</html>

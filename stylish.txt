@@ -1,0 +1,113 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0b3d0c;  /* Emerald green background */
+    color: #f4f4f4;  /* Light text for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #1a5823;  /* Slightly lighter green background for container */
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #d4af37;  /* Gold color for a luxurious feel */
+    margin-bottom: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #3a7445;
+    border-radius: 5px;
+    background-color: #244d24;
+    color: #f4f4f4;
+}
+
+input[type="text"]::placeholder {
+    color: #bbb;
+}
+
+button {
+    padding: 12px;
+    font-size: 18px;
+    background-color: #d4af37;
+    color: #1a5823;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #c49c35;
+}
+
+.error {
+    color: #ff4d4d;
+    text-align: center;
+    font-size: 16px;
+}
+
+.recommendation {
+    text-align: center;
+    padding: 20px;
+    background-color: #244d24;
+    border: 1px solid #3a7445;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.recommendation h2, .recommendation p {
+    margin: 10px 0;
+}
+
+.recommendation span {
+    font-weight: bold;
+    color: #d4af37;
+}
+
+.plot {
+    margin-bottom: 30px;
+}
+
+.risk-indicator {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+.risk-indicator.low-risk {
+    background-color: #28a745;
+}
+
+.risk-indicator.mild-risk {
+    background-color: #ffc107;
+}
+
+.risk-indicator.high-risk {
+    background-color: #dc3545;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background-color: #0b3d0c;
+    color: #f4f4f4;
+}
